@@ -10,7 +10,9 @@ export function CardCheckin({ onclick, isActive, title }: CardCheckinProps) {
   return (
     <button
       onClick={onclick}
-      className="flex flex-row w-full bg-white items-center justify-center rounded-lg text-black p-4 border border-1 gap-x-4"
+      className={`flex flex-row w-full bg-white items-center justify-center rounded-lg text-black p-4 border border-1 gap-x-4 ${
+        isActive && "border-purple"
+      }`}
     >
       <p className="text-lg">{title}</p>
       <div>

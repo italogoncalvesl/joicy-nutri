@@ -82,8 +82,20 @@ export default function Perguntas() {
 
   const [isActiveCheckin, setIsActiveCheckin] = useState<0 | 1 | 2>(0);
 
+  const [idade, setIdade] = useState("");
+  const [altura, setAltura] = useState("");
+  const [peso, setPeso] = useState("");
+
   function ActiveButton(id: number) {
     setSelectButton(id);
+  }
+
+  function ActiveCardGender(i: 0 | 1 | 2) {
+    if (isActiveCheckin === i) {
+      setIsActiveCheckin(0);
+    } else {
+      setIsActiveCheckin(i);
+    }
   }
 
   useEffect(() => {
@@ -167,12 +179,12 @@ export default function Perguntas() {
               <div className="flex flex-row gap-x-4">
                 <CardCheckin
                   title="Masculino"
-                  onclick={() => setIsActiveCheckin(setIsActiveCheckin())}
+                  onclick={() => ActiveCardGender(1)}
                   isActive={isActiveCheckin === 1}
                 />
                 <CardCheckin
                   title="Feminino"
-                  onclick={() => setIsActiveCheckin(!isActiveCheckin)}
+                  onclick={() => ActiveCardGender(2)}
                   isActive={isActiveCheckin === 2}
                 />
               </div>
@@ -184,6 +196,9 @@ export default function Perguntas() {
               <input
                 className="flex p-4 rounded-md no-underline bg-no-repeat"
                 placeholder="Sua idade"
+                value={idade}
+                onChange={(e) => setIdade(e.target.value)}
+                type="number"
               />
             </div>
             <div className="flex flex-col">
@@ -194,6 +209,9 @@ export default function Perguntas() {
                 <input
                   className="flex p-4 rounded-md no-underline bg-no-repeat"
                   placeholder="Sua idade"
+                  value={altura}
+                  onChange={(e) => setAltura(e.target.value)}
+                  type="number"
                 />
                 <div className="flex w-full h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
                   cm
@@ -202,12 +220,15 @@ export default function Perguntas() {
             </div>
             <div className="flex flex-col">
               <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
-                Qaunto você pesa?
+                Quanto você pesa?
               </span>
               <div className="flex flex-row gap-x-4">
                 <input
                   className="flex p-4 rounded-md no-underline bg-no-repeat"
                   placeholder="Sua idade"
+                  value={peso}
+                  onChange={(e) => setPeso(e.target.value)}
+                  type="number"
                 />
                 <div className="flex w-full h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
                   kg
@@ -217,7 +238,15 @@ export default function Perguntas() {
           </Case>
         </Switch>
       </div>
-      {selectButton != 0 && (
+      {selectButton != 0 && isPage !== 4 && (
+        <button
+          onClick={() => setIsPage(isPage + 1)}
+          className="bg-purple w-full rounded-lg px-4 py-3 text-white font-bold text-center"
+        >
+          Próximo
+        </button>
+      )}
+      {isActiveCheckin !== 0 && idade && altura && peso && isPage === 4 && (
         <button
           onClick={() => setIsPage(isPage + 1)}
           className="bg-purple w-full rounded-lg px-4 py-3 text-white font-bold text-center"
