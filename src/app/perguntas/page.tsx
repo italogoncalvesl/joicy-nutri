@@ -103,7 +103,7 @@ export default function Perguntas() {
   }, [isPage]);
 
   return (
-    <div className="flex h-screen w-full bg-default flex-col px-7 py-12 justify-between text-black">
+    <div className="flex h-screen w-full bg-default flex-col px-7 py-6 justify-start text-black">
       <div className="flex flex-col gap-y-5 ">
         <div className="flex w-full items-center justify-center font-medium">
           <p className="text-black">Metas</p>
@@ -241,7 +241,7 @@ export default function Perguntas() {
       {selectButton != 0 && isPage !== 4 && (
         <button
           onClick={() => setIsPage(isPage + 1)}
-          className="bg-purple w-full rounded-lg px-4 py-3 text-white font-bold text-center"
+          className="bg-purple w-full rounded-lg px-4 py-3 mt-10 text-white font-bold text-center"
         >
           Próximo
         </button>
