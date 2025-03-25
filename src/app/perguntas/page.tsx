@@ -76,26 +76,6 @@ const questions3 = [
   },
 ];
 
-const questions4 = [
-  {
-    key: 1,
-    title: "Falta de tempo para preparar refeições e/ou treinar",
-  },
-  {
-    key: 2,
-    title:
-      "Dificuldade em controlar a alimentação e lidar com a fome emocional",
-  },
-  {
-    key: 3,
-    title: "Falta de motivação e disciplina para seguir um plano alimentar",
-  },
-  {
-    key: 4,
-    title: "Influências externas, como eventos sociais e rotina familiar",
-  },
-];
-
 export default function Perguntas() {
   const [isPage, setIsPage] = useState(1);
   const [selectButton, setSelectButton] = useState(0);
