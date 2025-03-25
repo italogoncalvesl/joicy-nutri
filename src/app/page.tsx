@@ -1,268 +1,44 @@
 "use client";
-
-import { motion } from "framer-motion";
-import { Instagram, Location, Whatsapp } from "iconsax-react";
+import { ArrowLeft } from "iconsax-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex h-screen bg-black/90  items-center bg-bg-image flex-col bg-cover overflow-auto pt-20">
-      <Image
-        src={"/logo_c.svg"}
-        alt="Logo do C"
-        height={150}
-        width={150}
-        className="w-[35%]"
-        priority
-      />
-      <p className="flex text-white-main font-varien mt-4 text-xl">
-        Cold Suplementos
-      </p>
-      <div className="flex flex-row gap-x-3 mt-2">
-        <a
-          href="https://wa.me/5588992449842"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Whatsapp size="32" color="#ADEA28" variant="Bulk" />
-        </a>
-        <a
-          href="https://www.instagram.com/coldsuplementos/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Instagram size="32" color="#ADEA28" variant="Bulk" />
-        </a>
-        <a
-          href="https://www.google.com/maps/place/R.+Afonso+Ribeiro,+618+-+Centro,+Miss%C3%A3o+Velha+-+CE,+63200-000/@-7.2494051,-39.142423,15z/data=!4m6!3m5!1s0x7a164daf440ec8d:0xd556360927ea6d4d!8m2!3d-7.2494051!4d-39.142423!16s%2Fg%2F11w2cmqr81?hl=pt-br&entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Location size="32" color="#ADEA28" variant="Bulk" />
-        </a>
+    <div className="bg-purple h-screen w-full justify-end flex flex-col px-7 py-10">
+      <div className="flex mb-6">
+        <Image
+          alt="Logo"
+          src={"/images/logoBranca.png"}
+          width={190}
+          height={50}
+        />
       </div>
-      <div className="flex w-full flex-col items-center mt-7">
-        <p className="flex text-white-main font-jura text-center w-full justify-center text-sm">
-          Cadastre-se em nosso sistema de pontos!
+      <div className="flex gap-y-2 flex-col">
+        <h1 className="font-semibold text-xl">
+          Parabéns por dar o primeiro passo rumo à sua transformação! <br></br>
+          Estamos aqui para te ajudar nesse processo de perda de peso de forma
+          saudável e sustentável.
+        </h1>
+        <h2>
+          Para começar com o pé direito, precisamos conhecer um pouco mais sobre
+          você.
+        </h2>
+        <p>
+          Responda às perguntas a seguir com atenção, pois elas vão nos ajudar a
+          entender seus objetivos e desafios, garantindo que você tenha o melhor
+          suporte possível durante o desafio.
         </p>
-        <a
-          href="https://www.v2.donuz.co/ColdSuplementos"
-          className="flex w-full items-center justify-center"
-        >
-          <Image
-            src={"/images/banner-email.jpg"}
-            alt="Logo do C"
-            height={1200}
-            width={500}
-            className="w-3/4 rounded-md flex shadow-black/30 shadow-lg mt-2"
-            priority
-          />
-        </a>
-      </div>
-      <div className="flex flex-col mt-4 items-center justify-center max-w-full">
-        <p className="flex text-white-main font-jura text-center w-full justify-center text-sm ">
-          Confira nossas postagens
-        </p>
-        <div className="flex flex-row gap-x-3 justify-start w-full overflow-x-auto px-12 hide-scrollbar h-full min-x">
+        <p>Vamos lá?</p>
+        <div className="flex flex-row w-full items-center justify-center h-fit gap-x-3 mt-3">
+          <ArrowLeft size="30" color="#FFFFFF" className="mx-3" />
           <Link
-            href="https://www.instagram.com/coldsuplementos/"
-            className="flex-shrink-0"
+            href="/perguntas"
+            className="bg-white w-full rounded-lg px-4 py-3 text-purple font-bold text-center"
           >
-            <Image
-              src={"/images/pre-treino.png"}
-              alt="Logo do C"
-              height={160}
-              width={127}
-              className="rounded-md flex shadow-black/30 shadow-lg mt-2"
-              priority
-            />
-          </Link>
-          <Link
-            href="https://www.instagram.com/coldsuplementos/"
-            className="flex-shrink-0"
-          >
-            <Image
-              src={"/images/pre-treino.png"}
-              alt="Logo do C"
-              height={160}
-              width={127}
-              className="rounded-md flex shadow-black/30 shadow-lg mt-2"
-              priority
-            />
-          </Link>
-          <Link
-            href="https://www.instagram.com/coldsuplementos/"
-            className="flex-shrink-0"
-          >
-            <Image
-              src={"/images/pre-treino.png"}
-              alt="Logo do C"
-              height={160}
-              width={127}
-              className="rounded-md flex shadow-black/30 shadow-lg mt-2"
-              priority
-            />
-          </Link>
-          <Link
-            href="https://www.instagram.com/coldsuplementos/"
-            className="flex-shrink-0"
-          >
-            <Image
-              src={"/images/pre-treino.png"}
-              alt="Logo do C"
-              height={160}
-              width={127}
-              className="rounded-md flex shadow-black/30 shadow-lg mt-2"
-              priority
-            />
+            Próximo
           </Link>
         </div>
-      </div>
-
-      <div className="flex space-x-4 overflow-hidden mt-10">
-        <motion.div
-          initial={{ x: 0 }}
-          animate={{ x: "-100%" }}
-          transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-          className="flex flex-shrink-0 space-x-4"
-        >
-          <Image
-            src="/images/carrossel/Produtos_01.jpg"
-            alt="Imagem 1"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_02.jpg"
-            alt="Imagem 2"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_03.jpg"
-            alt="Imagem 3"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_04.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_05.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_06.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_07.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_10.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-        </motion.div>
-        <motion.div
-          initial={{ x: 0 }}
-          animate={{ x: "-100%" }}
-          transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-          className="flex flex-shrink-0 space-x-4"
-        >
-          <Image
-            src="/images/carrossel/Produtos_01.jpg"
-            alt="Imagem 1"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_02.jpg"
-            alt="Imagem 2"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_03.jpg"
-            alt="Imagem 3"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_04.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_05.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_06.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_07.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-          <Image
-            src="/images/carrossel/Produtos_10.jpg"
-            alt="Imagem 4"
-            height={50}
-            width={50}
-            className="rounded-md shadow-black/30 shadow-lg"
-            priority
-          />
-        </motion.div>
       </div>
     </div>
   );

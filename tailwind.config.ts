@@ -11,23 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "white-main": "#F6F6F5",
-      },
-      fontFamily: {
-        varien: ["varien", "sans-serif"],
-        jura: ["jura", "sans-serif"],
-      },
-      backgroundImage: {
-        "bg-image": "url(/images/background.png)",
-      },
-      animation: {
-        "loop-scroll": "loop-scroll 16s linear infinite",
-      },
-      keyframes: {
-        "loop-scroll": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-100%)" },
-        },
+        purple: "#A172C2",
+        default: "#f1f1f1",
       },
     },
   },
