@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="bg-purple h-screen w-full text-white">
-      <div className="bg-purple h-[90%] w-full px-7 justify-end flex flex-col ">
+      <div className="bg-purple h-[88%] w-full px-7 justify-end flex flex-col ">
         <div className="flex mb-6">
           <Image
             alt="Logo"
