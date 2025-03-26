@@ -248,75 +248,7 @@ export default function Perguntas() {
             </div>
           </Case>
           <Case condition={isPage === 5}>
-            <div className="flex flex-col w-full">
-              <span className="font-bold text-black text-xl w-4/5">
-                Conte um pouco sobre você
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
-                Selecione o sexo que devemos usar para calcular suas
-                necessidades calóricas:
-              </span>
-              <div className="flex flex-row gap-x-2">
-                <CardCheckin
-                  title="Masculino"
-                  onclick={() => ActiveCardGender(1)}
-                  isActive={isActiveCheckin === 1}
-                />
-                <CardCheckin
-                  title="Feminino"
-                  onclick={() => ActiveCardGender(2)}
-                  isActive={isActiveCheckin === 2}
-                />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
-                Qual sua idade?
-              </span>
-              <Input
-                className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
-                placeholder="Sua idade"
-                value={idade}
-                onChange={(e) => setIdade(e.target.value)}
-                type="number"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
-                Qual sua altura?
-              </span>
-              <div className="flex flex-row gap-x-3">
-                <Input
-                  className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
-                  placeholder="Sua idade"
-                  value={altura}
-                  onChange={(e) => setAltura(e.target.value)}
-                  type="number"
-                />
-                <div className="flex w-24 h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
-                  cm
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
-                Quanto você pesa?
-              </span>
-              <div className="flex flex-row gap-x-3">
-                <Input
-                  className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
-                  placeholder="Sua idade"
-                  value={peso}
-                  onChange={(e) => setPeso(e.target.value)}
-                  type="number"
-                />
-                <div className="flex w-24 h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
-                  kg
-                </div>
-              </div>
-            </div>
+            <div className="flex flex-col w-full h-full"></div>
           </Case>
         </Switch>
       </div>
