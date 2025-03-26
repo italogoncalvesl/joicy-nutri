@@ -113,7 +113,7 @@ export default function Perguntas() {
   }, [isPage]);
 
   return (
-    <div className="flex h-screen w-full flex-col px-7 py-6 justify-start text-black">
+    <div className="flex bg-purple h-screen w-full flex-col px-7 mt-4 justify-start text-black">
       <div className="flex flex-col gap-y-3">
         <div className="flex w-full items-center justify-center font-medium">
           <p className="text-black">Metas</p>
