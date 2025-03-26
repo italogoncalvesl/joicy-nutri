@@ -5,27 +5,28 @@ import Navigation from "../components/navigation";
 import { Switch, Case } from "react-if";
 import { CardQuestion } from "../components/card";
 import { CardCheckin } from "../components/cardCheckin";
+import { Input } from "@/components/ui/input";
 
 const questions1 = [
   {
     key: 1,
-    title: "Joicy",
+    title: "Autoestima",
     description: "Perder peso e melhorar minha saúde e autoestima",
   },
   {
     key: 2,
-    title: "Joicy",
+    title: "Manutenção",
     description: "Atingir meu peso ideal e manter a longo prazo",
   },
   {
     key: 3,
-    title: "Joicy",
+    title: "Mudança",
     description:
       "Mudar meus hábitos alimentares e praticar exercícios regularmente",
   },
   {
     key: 4,
-    title: "Joicy",
+    title: "Saúde",
     description: "Reduzir medidas e ter mais disposição no dia a dia",
   },
 ];
@@ -59,20 +60,25 @@ const questions2 = [
 const questions3 = [
   {
     key: 1,
-    title: "Falta de tempo para preparar refeições e/ou treinar",
+    title: "Tempo",
+    description: "Falta de tempo para preparar refeições e/ou treinar",
   },
   {
     key: 2,
-    title:
+    title: "Emoções",
+    description:
       "Dificuldade em controlar a alimentação e lidar com a fome emocional",
   },
   {
     key: 3,
-    title: "Falta de motivação e disciplina para seguir um plano alimentar",
+    title: "Disciplina",
+    description:
+      "Falta de motivação e disciplina para seguir um plano alimentar",
   },
   {
     key: 4,
-    title: "Influências externas, como eventos sociais e rotina familiar",
+    title: "Ambientes",
+    description: "Influências externas, como eventos sociais e rotina familiar",
   },
 ];
 
@@ -87,7 +93,11 @@ export default function Perguntas() {
   const [peso, setPeso] = useState("");
 
   function ActiveButton(id: number) {
-    setSelectButton(id);
+    if (selectButton === id) {
+      setSelectButton(0);
+    } else {
+      setSelectButton(id);
+    }
   }
 
   function ActiveCardGender(i: 0 | 1 | 2) {
@@ -161,6 +171,7 @@ export default function Perguntas() {
                   key={item.key}
                   isCard={item.key === selectButton}
                   title={item.title}
+                  description={item.description}
                 />
               ))}
             </div>
@@ -176,7 +187,7 @@ export default function Perguntas() {
                 Selecione o sexo que devemos usar para calcular suas
                 necessidades calóricas:
               </span>
-              <div className="flex flex-row gap-x-4">
+              <div className="flex flex-row gap-x-2">
                 <CardCheckin
                   title="Masculino"
                   onclick={() => ActiveCardGender(1)}
@@ -193,8 +204,8 @@ export default function Perguntas() {
               <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
                 Qual sua idade?
               </span>
-              <input
-                className="flex p-4 rounded-md no-underline bg-no-repeat"
+              <Input
+                className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
                 placeholder="Sua idade"
                 value={idade}
                 onChange={(e) => setIdade(e.target.value)}
@@ -205,15 +216,15 @@ export default function Perguntas() {
               <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
                 Qual sua altura?
               </span>
-              <div className="flex flex-row gap-x-4">
-                <input
-                  className="flex p-4 rounded-md no-underline bg-no-repeat"
+              <div className="flex flex-row gap-x-3">
+                <Input
+                  className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
                   placeholder="Sua idade"
                   value={altura}
                   onChange={(e) => setAltura(e.target.value)}
                   type="number"
                 />
-                <div className="flex w-full h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
+                <div className="flex w-24 h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
                   cm
                 </div>
               </div>
@@ -222,15 +233,86 @@ export default function Perguntas() {
               <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
                 Quanto você pesa?
               </span>
-              <div className="flex flex-row gap-x-4">
-                <input
-                  className="flex p-4 rounded-md no-underline bg-no-repeat"
+              <div className="flex flex-row gap-x-3">
+                <Input
+                  className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
                   placeholder="Sua idade"
                   value={peso}
                   onChange={(e) => setPeso(e.target.value)}
                   type="number"
                 />
-                <div className="flex w-full h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
+                <div className="flex w-24 h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
+                  kg
+                </div>
+              </div>
+            </div>
+          </Case>
+          <Case condition={isPage === 5}>
+            <div className="flex flex-col w-full">
+              <span className="font-bold text-black text-xl w-4/5">
+                Conte um pouco sobre você
+              </span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
+                Selecione o sexo que devemos usar para calcular suas
+                necessidades calóricas:
+              </span>
+              <div className="flex flex-row gap-x-2">
+                <CardCheckin
+                  title="Masculino"
+                  onclick={() => ActiveCardGender(1)}
+                  isActive={isActiveCheckin === 1}
+                />
+                <CardCheckin
+                  title="Feminino"
+                  onclick={() => ActiveCardGender(2)}
+                  isActive={isActiveCheckin === 2}
+                />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
+                Qual sua idade?
+              </span>
+              <Input
+                className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
+                placeholder="Sua idade"
+                value={idade}
+                onChange={(e) => setIdade(e.target.value)}
+                type="number"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
+                Qual sua altura?
+              </span>
+              <div className="flex flex-row gap-x-3">
+                <Input
+                  className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
+                  placeholder="Sua idade"
+                  value={altura}
+                  onChange={(e) => setAltura(e.target.value)}
+                  type="number"
+                />
+                <div className="flex w-24 h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
+                  cm
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
+                Quanto você pesa?
+              </span>
+              <div className="flex flex-row gap-x-3">
+                <Input
+                  className="flex p-4 rounded-md no-underline focus:border-purple bg-white shadow-none"
+                  placeholder="Sua idade"
+                  value={peso}
+                  onChange={(e) => setPeso(e.target.value)}
+                  type="number"
+                />
+                <div className="flex w-24 h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
                   kg
                 </div>
               </div>
@@ -249,7 +331,7 @@ export default function Perguntas() {
       {isActiveCheckin !== 0 && idade && altura && peso && isPage === 4 && (
         <button
           onClick={() => setIsPage(isPage + 1)}
-          className="bg-purple w-full rounded-lg px-4 py-3 text-white font-bold text-center"
+          className="bg-purple w-full rounded-lg px-4 py-3 mt-10 text-white font-bold text-center"
         >
           Próximo
         </button>

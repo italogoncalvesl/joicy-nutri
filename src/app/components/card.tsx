@@ -29,7 +29,7 @@ export function CardQuestion({
             >
               {title}
             </p>
-            <p className="text-sm">{description}</p>
+            <p className="text-sm text-black/80">{description}</p>
           </div>
           <div className="min-w-14 flex items-center justify-center">
             {isCard ? (
