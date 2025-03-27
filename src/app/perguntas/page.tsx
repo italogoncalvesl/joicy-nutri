@@ -116,14 +116,11 @@ export default function Perguntas() {
   return (
     <div className="flex bg-white max-h-screen w-full flex-col px-7 mt-4 justify-start text-black">
       <div className="flex flex-col gap-y-3">
-        <div className="flex w-full items-center justify-center font-medium">
-          <p className="text-black">Metas</p>
-        </div>
         <Navigation step={isPage} />
 
         <Switch>
           <Case condition={isPage === 1}>
-            <span className="font-bold text-black text-xl w-4/5">
+            <span className="font-bold text-black text-lg w-4/5">
               Que resultados você quer alcançar quando se trata de perca de
               peso?
             </span>
@@ -225,7 +222,7 @@ export default function Perguntas() {
                   onChange={(e) => setAltura(e.target.value)}
                   type="number"
                 />
-                <div className="flex w-24 h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
+                <div className="flex w-24 h-14 bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
                   cm
                 </div>
               </div>
@@ -242,7 +239,7 @@ export default function Perguntas() {
                   onChange={(e) => setPeso(e.target.value)}
                   type="number"
                 />
-                <div className="flex w-24 h-full bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
+                <div className="flex w-24 h-14 bg-purple/20 text-lg font-bold items-center justify-center text-purple rounded-md  ">
                   kg
                 </div>
               </div>
@@ -253,7 +250,7 @@ export default function Perguntas() {
       {selectButton != 0 && isPage !== 4 && (
         <button
           onClick={() => setIsPage(isPage + 1)}
-          className="bg-purple w-full rounded-lg px-4 py-3 mt-10 text-white font-bold text-center"
+          className="bg-purple w-full rounded-lg px-4 py-3 mt-8 mb-3 text-white font-bold text-center"
         >
           Próximo
         </button>
@@ -261,7 +258,7 @@ export default function Perguntas() {
       {isActiveCheckin !== 0 && idade && altura && peso && isPage === 4 && (
         <Link
           href="/resultado"
-          className="bg-purple w-full rounded-lg px-4 py-3 mt-10 text-white font-bold text-center"
+          className="bg-purple w-full rounded-lg px-4 py-3 mt-8 mb-3 text-white font-bold text-center"
         >
           Próximo
         </Link>

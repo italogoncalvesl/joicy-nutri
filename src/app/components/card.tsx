@@ -24,7 +24,7 @@ export function CardQuestion({
         >
           <div className="flex items-start flex-col text-start">
             <p
-              className={`font-bold text-purple text-lg  
+              className={`font-bold text-purple  
     `}
             >
               {title}
