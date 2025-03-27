@@ -6,6 +6,7 @@ import { Switch, Case } from "react-if";
 import { CardQuestion } from "../components/card";
 import { CardCheckin } from "../components/cardCheckin";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 const questions1 = [
   {
@@ -113,7 +114,7 @@ export default function Perguntas() {
   }, [isPage]);
 
   return (
-    <div className="flex bg-purple h-screen w-full flex-col px-7 mt-4 justify-start text-black">
+    <div className="flex bg-white max-h-screen w-full flex-col px-7 mt-4 justify-start text-black">
       <div className="flex flex-col gap-y-3">
         <div className="flex w-full items-center justify-center font-medium">
           <p className="text-black">Metas</p>
@@ -212,7 +213,7 @@ export default function Perguntas() {
                 type="number"
               />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col h-full">
               <span className="font-semibold text-black/60 text-sm w-4/5 mb-2">
                 Qual sua altura?
               </span>
@@ -247,9 +248,6 @@ export default function Perguntas() {
               </div>
             </div>
           </Case>
-          <Case condition={isPage === 5}>
-            <div className="flex flex-col w-full h-full"></div>
-          </Case>
         </Switch>
       </div>
       {selectButton != 0 && isPage !== 4 && (
@@ -261,12 +259,12 @@ export default function Perguntas() {
         </button>
       )}
       {isActiveCheckin !== 0 && idade && altura && peso && isPage === 4 && (
-        <button
-          onClick={() => setIsPage(isPage + 1)}
+        <Link
+          href="/resultado"
           className="bg-purple w-full rounded-lg px-4 py-3 mt-10 text-white font-bold text-center"
         >
           Próximo
-        </button>
+        </Link>
       )}
     </div>
   );
